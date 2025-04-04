@@ -42,12 +42,13 @@
     <div class=" sm:hidden bg-slate-400 " *ngIf="isMenuOpen ">
         <ul class="flex flex-col gap-5 items-center">
             <a routerLink=""><li class="cursor-pointer">Home</li></a>
-            <a routerLink="allreciepe">  <li class="cursor-pointer ">All Recipes</li></a><li>
-                <select class=" " >
-                    <option value="" class="text-gray-500">Difficulty</option>
-                    <option value="easy" class="text-gray-700">Easy</option>
-                    <option value="medium" class="text-gray-700">Medium</option>
-                    <option value="hard" class="text-gray-700">Hard</option>
+            <a routerLink="allreciepe">  <li class="cursor-pointer ">All Recipes</li></a>
+            <li>
+                <select (change)="selectDifficulty($event)" >
+                    <option value="" class="text-white bg-gray-700">Difficulty</option>
+                    <option value="easy" class="text-white bg-gray-700">Easy</option>
+                    <option value="medium" class="text-white bg-gray-700">Medium</option>
+                    <option value="hard" class="text-white bg-gray-700">Hard</option>
                 </select>
             </li>
           
