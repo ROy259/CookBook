@@ -7,7 +7,7 @@ import { AllReciepesComponent } from "./components/all-reciepes/all-reciepes.com
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, NavbarComponent, HomeComponent, FooterComponent, AllReciepesComponent],
+  imports: [RouterOutlet, NavbarComponent, FooterComponent, ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
