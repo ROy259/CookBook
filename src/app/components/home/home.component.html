@@ -1,0 +1,30 @@
+
+<div *ngIf="isLoading" class="flex justify-center items-center mt-16">
+    <img src="assets/frying-pan.gif" alt="Loading..." class="h-[100px]">
+  </div>
+<main class="mt-16 sm:px-40 ">
+   
+    <div class=" flex justify-center items-center">
+     <a [routerLink]="['/reciepedetail', HomeMainImge?.id]"> <img *ngIf="HomeMainImge" [src]="HomeMainImge.image" alt="Recipe Image" class=" sm:h-[700px] w-[1200px] relative"></a>
+      <div class="absolute sm:left-52 left-3">
+        <p class="font-bold text-4xl text-white"> ALL-TIME BEST</p>
+        <p class="font-bold text-4xl text-white">RECIPES</p>
+        <a routerLink="allreciepe"><button class="bg-amber-300 rounded-xs cursor-pointer p-2 font-semibold text-xl">SEE THEM ALL</button></a>
+      </div>
+    </div>
+
+
+    <div>
+`       <h1 class="text-3xl mb-5 font-medium">   WHAT WE'RE CRAVING</h1>
+     <div class="flex flex-col justify-around items-center sm:flex-row sm:flex-wrap gap-3 sm:items-center ">
+        <div *ngFor="let reciepe of HomeOtherImages">
+            <div class="w-[350px] rounded-lg h-[390px] bg-white border border-amber-100 shadow-2xs shadow-amber-100">
+             <a [routerLink]="['/reciepedetail',reciepe.id ]"> <img src="{{reciepe.image}}" alt="img" class="object-fill w-full h-[200px] rounded-t-lg"></a>
+              <p class="text-xl font-bold px-2 mt-5">{{reciepe.name}}</p>
+
+            </div>
+          </div>
+    </div> 
+</div>
+  </main> 
+  

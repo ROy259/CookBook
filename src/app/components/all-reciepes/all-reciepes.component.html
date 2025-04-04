@@ -1,0 +1,21 @@
+
+<div class="background-image">
+  <div *ngIf="isLoading" class="flex justify-center items-center mt-16 ">
+    <img src="assets/frying-pan.gif" alt="Loading..." class="h-[100px]">
+  </div>
+  <div class="flex flex-wrap justify-center px-9 gap-4 mt-16">
+    <div *ngIf="!isLoading && filteredRecipes.length === 0" class="text-red-600 text-2xl font-semibold text-center w-full mt-10 mb-10">
+      No hard recipes available yet — why not be the chef and create one yourself? 👨‍🍳.
+    </div>
+    <div *ngFor="let reciepe of filteredRecipes"> 
+      <div class="w-[350px] rounded-lg h-[390px] bg-white border border-amber-100 shadow-2xs shadow-amber-100">
+        <a [routerLink]="['/reciepedetail', reciepe.id]">
+          <img [src]="reciepe.image" alt="img" class="object-fill w-full h-[200px] rounded-t-lg">
+        </a>
+        <p class="text-[18px] font-extralight px-2 mt-2">{{ reciepe.tags }}</p>
+        <p class="text-xl font-bold px-2 mt-3">{{ reciepe.name }}</p>
+        <p class="px-2 mt-2"><span class="font-semibold">Rating:</span> {{ reciepe.rating }}</p>
+      </div>
+    </div>
+  </div>
+</div>

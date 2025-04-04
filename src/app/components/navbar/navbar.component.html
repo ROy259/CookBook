@@ -1,0 +1,62 @@
+
+
+
+<nav class="z-50 w-full top-0 fixed">
+    <div class="flex justify-between bg-slate-400 items-center py-2 px-10">
+        <h2 class="font-serif font-semibold text-3xl">
+            <i class="fa-solid fa-utensils"></i> CookBook
+        </h2>
+
+        <div class="md:hidden" >
+            <button  id="menu-toggle" class="text-2xl" (click)="clickMenu()" >
+                <i class="fa-solid fa-bars" ></i>
+            </button>
+        </div>
+
+        
+
+        <div class="hidden md:flex gap-11 items-center">
+            <ul class="flex gap-5 items-center">
+                <a routerLink=""><li class="cursor-pointer">Home</li></a>
+              <a routerLink="allreciepe">  <li class="cursor-pointer ">All Recipes</li></a>
+                <li>
+                    <select (change)="selectDifficulty($event)" >
+                        <option value="" class="text-white bg-gray-700">Difficulty</option>
+                        <option value="easy" class="text-white bg-gray-700">Easy</option>
+                        <option value="medium" class="text-white bg-gray-700">Medium</option>
+                        <option value="hard" class="text-white bg-gray-700">Hard</option>
+                    </select>
+                </li>
+               
+            </ul>
+
+            <div class="flex gap-3 items-center pr-3 w-[300px] h-8 border rounded-md focus-within:outline-2 focus-within:outline-yellow-200 focus-within:border-none">
+                <input [(ngModel)]="searchItem"   (input)="searchedItem()" type="text" placeholder="Vegetarian Stir-Fry" class="outline-none w-full h-8 pl-3">
+                <i class="fa-solid fa-magnifying-glass text-xl"></i>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class=" sm:hidden bg-slate-400 " *ngIf="isMenuOpen ">
+        <ul class="flex flex-col gap-5 items-center">
+            <a routerLink=""><li class="cursor-pointer">Home</li></a>
+            <a routerLink="allreciepe">  <li class="cursor-pointer ">All Recipes</li></a><li>
+                <select class=" " >
+                    <option value="" class="text-gray-500">Difficulty</option>
+                    <option value="easy" class="text-gray-700">Easy</option>
+                    <option value="medium" class="text-gray-700">Medium</option>
+                    <option value="hard" class="text-gray-700">Hard</option>
+                </select>
+            </li>
+            <li>
+                <select >
+                    <option value="" class="text-gray-500">Meal Type</option>
+                    <option value="dinner" class="text-gray-700">Dinner</option>
+                    <option value="lunch" class="text-gray-700">Lunch</option>
+                    <option value="breakfast" class="text-gray-700">Breakfast</option>
+                </select>
+            </li>
+        </ul>
+        </div>

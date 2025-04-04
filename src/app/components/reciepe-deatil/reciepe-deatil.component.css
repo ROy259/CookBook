@@ -1,0 +1,10 @@
+/* Apply background to the entire body or container */
+.background-image {
+    background-image: url('/assets/reciepeDetail1.png'); /* Path to your image */
+    background-size: cover; /* Ensure the background image covers the full container */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat;
+     /* Prevent the background from repeating */
+     /* Full height of the viewport */
+  }
+  
